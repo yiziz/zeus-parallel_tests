@@ -1,0 +1,10 @@
+development:
+  merlin: http://bonusbox:3qqm2f7G4saiqndf@produ-merli-serve-web.aws.bonusbox.me/
+test:
+  fraud_detection:
+    end_point: http://test.local/fraud_detection
+  merlin: http://bonusbox:3qqm2f7G4saiqndf@produ-merli-serve-web.aws.bonusbox.me/
+staging:
+  merlin: http://bonusbox:3qqm2f7G4saiqndf@produ-merli-serve-web.aws.bonusbox.me/
+production:
+  merlin: http://bonusbox:3qqm2f7G4saiqndf@produ-merli-serve-web.aws.bonusbox.me/

@@ -1,0 +1,108 @@
+Connecting to database specified by database.yml
+Rails.root/config/couchdb.yml does not exist. Not configuring a database.
+Connecting to database specified by database.yml
+Rails.root/config/couchdb.yml does not exist. Not configuring a database.
+Connecting to database specified by database.yml
+Rails.root/config/couchdb.yml does not exist. Not configuring a database.
+Connecting to database specified by database.yml
+Rails.root/config/couchdb.yml does not exist. Not configuring a database.
+  [1m[36m (0.1ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (0.9ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+  [1m[36m (0.7ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.1ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations" 
+Migrating to CreateFraudDetectionUsers (20130319092253)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  CREATE TABLE "fraud_detection_users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "facebook_uid" varchar(255), "state" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20130319092253')[0m
+  [1m[35m (0.7ms)[0m  commit transaction
+Migrating to CreateFraudDetectionAudits (20130319092626)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  CREATE TABLE "fraud_detection_audits" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "facebook_uid" varchar(255), "state" varchar(255), "who" varchar(255), "event" varchar(255), "transition" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20130319092626')[0m
+  [1m[35m (0.6ms)[0m  commit transaction
+Migrating to AddReasonForUser (20130320094019)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  ALTER TABLE "fraud_detection_users" ADD "reason" varchar(255)
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20130320094019')[0m
+  [1m[35m (0.5ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Connecting to database specified by database.yml
+Rails.root/config/couchdb.yml does not exist. Not configuring a database.
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.2ms)[0m  select sqlite_version(*)
+  [1m[36m (2.3ms)[0m  [1mCREATE TABLE "fraud_detection_audits" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "facebook_uid" varchar(255), "state" varchar(255), "who" varchar(255), "event" varchar(255), "transition" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.8ms)[0m  CREATE TABLE "fraud_detection_users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "facebook_uid" varchar(255), "state" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "reason" varchar(255)) 
+  [1m[36m (0.8ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35m (0.8ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.1ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (0.7ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20130320094019')
+  [1m[36m (0.6ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20130319092253')[0m
+  [1m[35m (0.7ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20130319092626')
+Connecting to database specified by database.yml
+Rails.root/config/couchdb.yml does not exist. Not configuring a database.
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.4ms)[0m  select sqlite_version(*)
+  [1m[36m (1.3ms)[0m  [1mDROP TABLE "fraud_detection_audits"[0m
+  [1m[35m (1.0ms)[0m  CREATE TABLE "fraud_detection_audits" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "facebook_uid" varchar(255), "state" varchar(255), "who" varchar(255), "event" varchar(255), "transition" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (1.3ms)[0m  [1mDROP TABLE "fraud_detection_users"[0m
+  [1m[35m (1.4ms)[0m  CREATE TABLE "fraud_detection_users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "facebook_uid" varchar(255), "state" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "reason" varchar(255)) 
+  [1m[36m (0.1ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+Connecting to database specified by database.yml
+Rails.root/config/couchdb.yml does not exist. Not configuring a database.
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.2ms)[0m  select sqlite_version(*)
+  [1m[36m (2.4ms)[0m  [1mDROP TABLE "fraud_detection_audits"[0m
+  [1m[35m (0.8ms)[0m  CREATE TABLE "fraud_detection_audits" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "facebook_uid" varchar(255), "state" varchar(255), "who" varchar(255), "event" varchar(255), "transition" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.8ms)[0m  [1mDROP TABLE "fraud_detection_users"[0m
+  [1m[35m (0.8ms)[0m  CREATE TABLE "fraud_detection_users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "facebook_uid" varchar(255), "state" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "reason" varchar(255)) 
+  [1m[36m (0.1ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+Connecting to database specified by database.yml
+Rails.root/config/couchdb.yml does not exist. Not configuring a database.
+  [1m[36m (0.2ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.5ms)[0m  select sqlite_version(*)
+  [1m[36m (2.9ms)[0m  [1mDROP TABLE "fraud_detection_audits"[0m
+  [1m[35m (1.1ms)[0m  CREATE TABLE "fraud_detection_audits" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "facebook_uid" varchar(255), "state" varchar(255), "who" varchar(255), "event" varchar(255), "transition" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (1.1ms)[0m  [1mDROP TABLE "fraud_detection_users"[0m
+  [1m[35m (1.0ms)[0m  CREATE TABLE "fraud_detection_users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "facebook_uid" varchar(255), "state" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "reason" varchar(255)) 
+  [1m[36m (0.1ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+Connecting to database specified by database.yml
+Rails.root/config/couchdb.yml does not exist. Not configuring a database.
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to CreateFraudDetectionUsers (20130319092253)
+Migrating to CreateFraudDetectionAudits (20130319092626)
+Migrating to AddReasonForUser (20130320094019)
+Migrating to AddReasonToUsers (20130321130513)
+  [1m[35m (0.0ms)[0m  select sqlite_version(*)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "users" ADD "reason" varchar(255)
+SQLite3::SQLException: no such table: users: ALTER TABLE "users" ADD "reason" varchar(255)
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+Connecting to database specified by database.yml
+Rails.root/config/couchdb.yml does not exist. Not configuring a database.
+  [1m[36m (0.5ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to CreateFraudDetectionUsers (20130319092253)
+Migrating to CreateFraudDetectionAudits (20130319092626)
+Migrating to AddReasonForUser (20130320094019)
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Connecting to database specified by database.yml
+Rails.root/config/couchdb.yml does not exist. Not configuring a database.
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.2ms)[0m  select sqlite_version(*)
+  [1m[36m (1.0ms)[0m  [1mCREATE TABLE "fraud_detection_audits" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "facebook_uid" varchar(255), "state" varchar(255), "who" varchar(255), "event" varchar(255), "transition" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.9ms)[0m  CREATE TABLE "fraud_detection_users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "facebook_uid" varchar(255), "state" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "reason" varchar(255)) 
+  [1m[36m (0.9ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35m (0.7ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.1ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (0.7ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20130320094019')
+  [1m[36m (0.7ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20130319092253')[0m
+  [1m[35m (0.6ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20130319092626')
+Connecting to database specified by database.yml
+Rails.root/config/couchdb.yml does not exist. Not configuring a database.
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.2ms)[0m  select sqlite_version(*)
+  [1m[36m (1.2ms)[0m  [1mDROP TABLE "fraud_detection_audits"[0m
+  [1m[35m (0.8ms)[0m  CREATE TABLE "fraud_detection_audits" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "facebook_uid" varchar(255), "state" varchar(255), "who" varchar(255), "event" varchar(255), "transition" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.9ms)[0m  [1mDROP TABLE "fraud_detection_users"[0m
+  [1m[35m (0.9ms)[0m  CREATE TABLE "fraud_detection_users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "facebook_uid" varchar(255), "state" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "reason" varchar(255)) 
+  [1m[36m (0.1ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
