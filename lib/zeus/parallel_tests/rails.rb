@@ -4,19 +4,12 @@ require_relative 'worker'
 module Zeus
   module ParallelTests
     class Rails < ::Zeus::Rails
-      def parallel_cucumber
-        exec parallel_runner_command "cucumber", ARGV
-      end
 
       def parallel_rspec
         argv = ARGV.dup
         argv.delete("--color")  # remove this argument from list
         argv.delete("--colour") # because it was causing bug #14
         exec parallel_runner_command "rspec", argv
-      end
-
-      def parallel_cucumber_worker
-        spawn_slave { |args| cucumber(args) }
       end
 
       def parallel_rspec_worker
@@ -33,13 +26,6 @@ module Zeus
         else
           Zeus::M.run(argv)
         end
-      end
-
-      def cucumber(argv = ARGV)
-        cucumber_main = Cucumber::Cli::Main.new(argv.dup)
-        had_failures = cucumber_main.execute!(@cucumber_runtime)
-        exit_code = had_failures ? 1 : 0
-        exit exit_code
       end
 
       # End of patches for Zeus
